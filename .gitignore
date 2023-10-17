@@ -80,3 +80,7 @@ venv.bak/
 
 ### JetBrains
 .idea/
+
+### Python Venvs
+**/venv*
+**/.venv*
