@@ -349,6 +349,13 @@ class LogEntry(models.Model):
         related_name="+",
         verbose_name=_("actor"),
     )
+    service_actor = models.CharField(
+        max_length=255,
+        db_index=True,
+        blank=True,
+        null=True,
+        verbose_name=_("Service Actor"),
+    )
     cid = models.CharField(
         max_length=255,
         db_index=True,
