@@ -37,21 +37,6 @@ class AuditlogMiddleware:
             return user
         return None
 
-    def get_user_from_jwt(self, request):
-        auth_header = request.headers.get('Authorization')
-
-        if not auth_header:
-            return None
-
-        try:
-            token = auth_header.split(' ')[1]
-            userJWT = validate(token)
-            print(userJWT)
-            # TODO: Create user from JWT
-            return userJWT
-        except (CustomUser.DoesNotExist):
-            return None
-
     def __call__(self, request):
         remote_addr = self._get_remote_addr(request)
         user = self._get_actor(request)
